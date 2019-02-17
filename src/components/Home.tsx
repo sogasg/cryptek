@@ -15,17 +15,36 @@ import SafelloWidget from "./SafelloWidget"
 
 interface Props extends WithStyles<typeof styles> {}
 
-const BuyBtc: React.SFC<Props> = ({ classes }) => (
+const BuyEth: React.SFC<Props> = ({ classes }) => (
   <>
     <Card className={classes.card}>
       <CardContent className={classes.cardContent}>
-        <Typography variant="h1" className={classes.header}>
-          Kjøp Bitcoin
+        <Typography variant="h2" className={classes.header}>
+          Kjøpe Bitcoin eller Ethereum
         </Typography>
+        <Typography variant="h6">
+          Her kan du kjøpe Bitcoin og Ethereum ved hjelp av Visa/MasterCard og
+          BankID
+        </Typography>
+        <Button
+          variant="contained"
+          color="primary"
+          className={classes.buttonBtc}
+         href="#/bitcoin" 
+        >
+          Bitcoin
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          className={classes.buttonEth}
+            href="#/ethereum" 
+        >
+          Ethereum
+        </Button>
         <Typography variant="body1">
-          Her kan du kjøpe Bitcoin ved hjelp av Visa/MasterCard og BankID
+            Denne tjenesten er under utvikling av Cluda AS. Dette er en foreløbig versjon som vil gi tilgang til kjøp og salg av Ethereum i utviklingsperioden.
         </Typography>
-        <SafelloWidget crypto="btc" country="no" lang="no" />
       </CardContent>
     </Card>
   </>
@@ -45,12 +64,21 @@ const styles = ({  }: Theme) =>
     header: {
       margin: 10,
     },
-    button: {
+    buttonBtc: {
+      fontSize: 30,
+      background: "#f7931a",
+        margin: 10,
+        marginTop: 30,
+    },
+    buttonEth: {
+      fontSize: 30,
+      backgroundColor: "#828384",
       margin: 10,
+        marginTop: 30,
     },
   })
 
-const componentWithStyles = withStyles(styles)(BuyBtc)
+const componentWithStyles = withStyles(styles)(BuyEth)
 
 // STATE
 const mapStateToProps = (state: any) => {

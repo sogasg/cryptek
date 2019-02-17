@@ -23,6 +23,9 @@ const BuyEth: React.SFC<Props> = ({ classes }) => (
         <Typography variant="h1" className={classes.header}>
             Kjøp Ethereum
         </Typography>
+        <Typography variant="body1">
+            Her kan du kjøpe Ethereum ved hjelp av Visa/MasterCard og BankID
+        </Typography>
         <SafelloWidget crypto="eth" country="no" lang="no" ></SafelloWidget>
       </CardContent>
     </Card>
@@ -35,7 +38,7 @@ const styles = ({  }: Theme) =>
     card: {
       maxWidth: 900,
       margin: "auto",
-      marginTop: 150,
+      marginTop: 30,
     },
     cardContent: {
       textAlign: "center",

@@ -1,6 +1,7 @@
 import * as React from "react"
 import { SFC } from "react"
 import { withStyles, createStyles, Theme, WithStyles } from "@material-ui/core"
+import backgriundImg from "../img/norway1.jpg"
 
 interface Props extends WithStyles<typeof styles> {}
 
@@ -14,23 +15,9 @@ const Layout: SFC<Props> = ({ classes, children }) => (
 
 const styles = ({ palette, spacing }: Theme) =>
   createStyles({
-    root: {
-      flexGrow: 1,
-      zIndex: 1,
-      overflow: "hidden",
-      position: "relative",
-      display: "flex",
-    },
-    background: {
-      flexGrow: 1,
-      minWidth: 0, // So the Typography noWrap works
-      backgroundColor: "#000000",
-      minHeight: "100vh",
-    },
-    content: {
-      padding: spacing.unit,
-      paddingTop: 64,
-    },
+    root: {},
+    background: {},
+    content: {},
   })
 
 export default withStyles(styles)(Layout)
