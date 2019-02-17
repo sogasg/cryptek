@@ -1,0 +1,70 @@
+
+import * as React from "react"
+import { connect } from "react-redux"
+import { push } from "connected-react-router"
+import {
+  withStyles,
+  Typography,
+  Theme,
+  WithStyles,
+  createStyles,
+  Card,
+  Button,
+  CardContent,
+} from "@material-ui/core"
+import SafelloWidget from "./SafelloWidget";
+
+interface Props extends WithStyles<typeof styles> {
+}
+
+const BuyBtc: React.SFC<Props> = ({ classes }) => (
+  <>
+    <Card className={classes.card}>
+      <CardContent className={classes.cardContent}>
+        <Typography variant="h1" className={classes.header}>
+            Kjøp Bitcoin
+        </Typography>
+        <SafelloWidget crypto="btc" country="no" lang="no" ></SafelloWidget>
+      </CardContent>
+    </Card>
+  </>
+)
+
+// STYLE
+const styles = ({  }: Theme) =>
+  createStyles({
+    card: {
+      maxWidth: 900,
+      margin: "auto",
+      marginTop: 150,
+    },
+    cardContent: {
+      textAlign: "center",
+    },
+    header: {
+      margin: 10,
+    },
+    button: {
+      margin: 10,
+    },
+  })
+
+const componentWithStyles = withStyles(styles)(BuyBtc)
+
+// STATE
+const mapStateToProps = (state: any) => {
+  return {}
+}
+
+const mapDispatchToProps = (dispatch: any) => {
+  return {
+    createDao: () => {
+      dispatch(push("/dao-creator"))
+    },
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(componentWithStyles)
