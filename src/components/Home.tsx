@@ -9,35 +9,49 @@ import {
   createStyles,
   Card,
   Button,
-    CardContent,
-    Grid,
+  CardContent,
+  Grid,
 } from "@material-ui/core"
 import SafelloWidget from "./SafelloWidget"
 
-interface Props extends WithStyles<typeof styles> {}
+interface Props extends WithStyles<typeof styles> {
+  contry: "no" | "dk" | "se"
+}
 
-const BuyEth: React.SFC<Props> = ({ classes }) => (
-    <Grid container className={classes.root} direction="row" justify="center" alignItems="center">
-        <Grid className={classes.widget} item xs={12} md={6}>
-            <SafelloWidget crypto="eth" country="no" lang="no" />
-        </Grid>
-        <Grid item className={classes.widget} xs={12} md={6}>
-            <SafelloWidget crypto="btc" country="no" lang="no" />
-        </Grid>
+const BuyEth: React.SFC<Props> = ({ classes, contry }) => (
+  <div>
+    <Grid
+      container
+      className={classes.root}
+      direction="row"
+      justify="center"
+      alignItems="center"
+    >
+      <Grid className={classes.widget} item xs={12} md={6}>
+        <SafelloWidget crypto="eth" country={contry} lang={contry} />
+      </Grid>
+      <Grid item className={classes.widget} xs={12} md={6}>
+        <SafelloWidget crypto="btc" country={contry} lang={contry} />
+      </Grid>
     </Grid>
+
+    <Typography variant="body1">
+      Laget av <a href="http://cluda.com/"> Cluda AS</a>
+    </Typography>
+  </div>
 )
 
 // STYLE
 const styles = ({  }: Theme) =>
-    createStyles({
-        root: {
-            flexGrow: 1,
-            height: "100vh",
-        },
+  createStyles({
+    root: {
+      flexGrow: 1,
+      height: "100vh",
+    },
     widget: {
-        //margin: "auto",
-        marginTop: 30,
-        textAlign: "center"
+      //margin: "auto",
+      marginTop: 30,
+      textAlign: "center",
     },
     cardContent: {
       textAlign: "center",
@@ -48,14 +62,14 @@ const styles = ({  }: Theme) =>
     buttonBtc: {
       fontSize: 30,
       background: "#f7931a",
-        margin: 10,
-        marginTop: 30,
+      margin: 10,
+      marginTop: 30,
     },
     buttonEth: {
       fontSize: 30,
       backgroundColor: "#828384",
       margin: 10,
-        marginTop: 30,
+      marginTop: 30,
     },
   })
 
@@ -63,15 +77,14 @@ const componentWithStyles = withStyles(styles)(BuyEth)
 
 // STATE
 const mapStateToProps = (state: any) => {
-  return {}
+  let contry = window.location.hostname.split(".").pop()
+  return {
+    contry: contry === "localhost" ? "no" : (contry as any),
+  }
 }
 
 const mapDispatchToProps = (dispatch: any) => {
-  return {
-    createDao: () => {
-      dispatch(push("/dao-creator"))
-    },
-  }
+  return {}
 }
 
 export default connect(
