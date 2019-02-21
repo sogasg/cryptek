@@ -3,7 +3,7 @@ import { createMuiTheme } from "@material-ui/core"
 const theme = createMuiTheme({
   palette: {
     background: {
-      default: "#03A9F4",
+      default: "#D3F1FF",
       paper: "white",
     },
   },

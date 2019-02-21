@@ -11,37 +11,34 @@ import {
   Button,
   CardContent,
 } from "@material-ui/core"
-import SafelloWidget from "./SafelloWidget";
+import SafelloWidget from "./SafelloWidget"
 
-interface Props extends WithStyles<typeof styles> {
-}
+interface Props extends WithStyles<typeof styles> {}
 
 const BuyEth: React.SFC<Props> = ({ classes }) => (
-  <>
-    <Card className={classes.card}>
-      <CardContent className={classes.cardContent}>
-        <Typography variant="h1" className={classes.header}>
-            Kjøp Ethereum
-        </Typography>
-        <Typography variant="body1">
-            Her kan du kjøpe Ethereum ved hjelp av Visa/MasterCard og BankID
-        </Typography>
-        <SafelloWidget crypto="eth" country="no" lang="no" ></SafelloWidget>
-      </CardContent>
-    </Card>
-  </>
+  <div className={classes.root}>
+    <Typography variant="h1" className={classes.header}>
+      Kjøp Ethereum
+    </Typography>
+    <Typography className={classes.bodyText} variant="body1">
+      Her kan du kjøpe Ethereum ved hjelp av Visa/MasterCard og BankID
+    </Typography>
+    <SafelloWidget crypto="eth" country="no" lang="no" />
+  </div>
 )
 
 // STYLE
 const styles = ({  }: Theme) =>
   createStyles({
-    card: {
-      maxWidth: 900,
+    root: {
       margin: "auto",
       marginTop: 30,
-    },
-    cardContent: {
       textAlign: "center",
+    },
+    bodyText: {
+      fontSize: 18,
+      marginTop: 25,
+      marginBottom: 10,
     },
     header: {
       margin: 10,
