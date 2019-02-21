@@ -9,54 +9,35 @@ import {
   createStyles,
   Card,
   Button,
-  CardContent,
+    CardContent,
+    Grid,
 } from "@material-ui/core"
 import SafelloWidget from "./SafelloWidget"
 
 interface Props extends WithStyles<typeof styles> {}
 
 const BuyEth: React.SFC<Props> = ({ classes }) => (
-  <>
-    <Card className={classes.card}>
-      <CardContent className={classes.cardContent}>
-        <Typography variant="h2" className={classes.header}>
-          Kjøpe Bitcoin eller Ethereum
-        </Typography>
-        <Typography variant="h6">
-          Her kan du kjøpe Bitcoin og Ethereum ved hjelp av Visa/MasterCard og
-          BankID
-        </Typography>
-        <Button
-          variant="contained"
-          color="primary"
-          className={classes.buttonBtc}
-         href="#/bitcoin" 
-        >
-          Bitcoin
-        </Button>
-        <Button
-          variant="contained"
-          color="primary"
-          className={classes.buttonEth}
-            href="#/ethereum" 
-        >
-          Ethereum
-        </Button>
-        <Typography variant="body1">
-            Denne tjenesten er under utvikling av Cluda AS. Dette er en foreløbig versjon som vil gi tilgang til kjøp og salg av Ethereum i utviklingsperioden.
-        </Typography>
-      </CardContent>
-    </Card>
-  </>
+    <Grid container className={classes.root} direction="row" justify="center" alignItems="center">
+        <Grid className={classes.widget} item xs={12} md={6}>
+            <SafelloWidget crypto="eth" country="no" lang="no" />
+        </Grid>
+        <Grid item className={classes.widget} xs={12} md={6}>
+            <SafelloWidget crypto="btc" country="no" lang="no" />
+        </Grid>
+    </Grid>
 )
 
 // STYLE
 const styles = ({  }: Theme) =>
-  createStyles({
-    card: {
-      maxWidth: 900,
-      margin: "auto",
-      marginTop: 30,
+    createStyles({
+        root: {
+            flexGrow: 1,
+            height: "100vh",
+        },
+    widget: {
+        //margin: "auto",
+        marginTop: 30,
+        textAlign: "center"
     },
     cardContent: {
       textAlign: "center",
