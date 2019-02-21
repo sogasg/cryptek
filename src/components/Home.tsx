@@ -15,10 +15,10 @@ import {
 import SafelloWidget from "./SafelloWidget"
 
 interface Props extends WithStyles<typeof styles> {
-  contry: "no" | "dk" | "se"
+  country: "no" | "dk" | "se"
 }
 
-const BuyEth: React.SFC<Props> = ({ classes, contry }) => (
+const BuyEth: React.SFC<Props> = ({ classes, country }) => (
   <div>
     <Grid
       container
@@ -28,15 +28,15 @@ const BuyEth: React.SFC<Props> = ({ classes, contry }) => (
       alignItems="center"
     >
       <Grid className={classes.widget} item xs={12} md={6}>
-        <SafelloWidget crypto="eth" country={contry} lang={contry} />
+        <SafelloWidget crypto="eth" country={country} lang={country} />
       </Grid>
       <Grid item className={classes.widget} xs={12} md={6}>
-        <SafelloWidget crypto="btc" country={contry} lang={contry} />
+        <SafelloWidget crypto="btc" country={country} lang={country} />
       </Grid>
     </Grid>
 
     <Typography variant="body1">
-      Laget av <a href="http://cluda.com/"> Cluda AS</a>
+      Laget av <a href="http://cluda.com/"> Cluda AS</a> - {country.toUpperCase()}
     </Typography>
   </div>
 )
@@ -77,9 +77,10 @@ const componentWithStyles = withStyles(styles)(BuyEth)
 
 // STATE
 const mapStateToProps = (state: any) => {
-  const contry = window.location.hostname.split(".").reverse()[0]
+    const country = window.location.hostname.split(".").reverse()[0]
+    console.log("country: " + country)
   return {
-    contry: contry === "localhost" ? "no" : (contry as any),
+    country: country === "localhost" ? "no" : (country as any),
   }
 }
 
