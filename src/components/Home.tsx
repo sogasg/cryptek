@@ -77,7 +77,7 @@ const componentWithStyles = withStyles(styles)(BuyEth)
 
 // STATE
 const mapStateToProps = (state: any) => {
-  let contry = window.location.hostname.split(".").pop()
+  const contry = window.location.hostname.split(".").reverse()[0]
   return {
     contry: contry === "localhost" ? "no" : (contry as any),
   }
