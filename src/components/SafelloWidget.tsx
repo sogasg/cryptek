@@ -32,7 +32,7 @@ class SafelloWidget extends React.Component<Props, State> {
           className={this.state.className}
           data-app-id="019d4940-0342-4445-8990-665d4411dabe"
           data-border="true"
-          data-address-helper="true"
+          data-address-helper="false"
           data-crypto={this.props.crypto}
           data-country={this.props.country}
           data-lang={this.props.lang}
