@@ -32,6 +32,10 @@ const BuyEth: React.SFC<Props> = ({ classes, country }) => (
           <Typography variant="h2" gutterBottom className={classes.topHeadline}>
             Kjøp kryptovaluta kjapt, trygt og enkelt
           </Typography>
+
+          <Typography variant="h5" gutterBottom className={classes.topHeadline}>
+            Kjøpe Bitcoin og Ethereum ved hjelp av Visa, MasterCard og BankId.
+          </Typography>
         </Grid>
         <Grid className={classes.widget} item xs={12} md={6}>
           <SafelloWidget crypto="eth" country={country} lang={country} />

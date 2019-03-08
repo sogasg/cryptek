@@ -30,11 +30,11 @@
     "typescript": "3.2.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "cp public/index-no.html public/index.html && react-scripts start",
     "build": "react-scripts build",
-    "deploy-no": "echo 'cryptek.no' > build/CNAME && gh-pages -d build -r git@github.com:sogasg/cryptek-deploy-no.git -b master",
-    "deploy-se": "echo 'cryptek.se' > build/CNAME && gh-pages -d build -r git@github.com:sogasg/cryptek-deploy-se.git -b master",
-    "deploy-dk": "echo 'cryptek.dk' > build/CNAME && gh-pages -d build -r git@github.com:sogasg/cryptek-deploy-dk.git -b master",
+    "deploy-no": "cp public/index-no.html public/index.html && npm run build && echo 'cryptek.no' > build/CNAME && gh-pages -d build -r git@github.com:sogasg/cryptek-deploy-no.git -b master",
+    "deploy-se": "cp public/index-se.html public/index.html && npm run build && echo 'cryptek.se' > build/CNAME && gh-pages -d build -r git@github.com:sogasg/cryptek-deploy-se.git -b master",
+    "deploy-dk": "cp public/index-dk.html public/index.html && npm run build && echo 'cryptek.dk' > build/CNAME && gh-pages -d build -r git@github.com:sogasg/cryptek-deploy-dk.git -b master",
     "deploy": "npm run deploy-no && npm run deploy-se && npm run deploy-dk",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -42,10 +42,5 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"]
 }
