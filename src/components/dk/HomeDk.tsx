@@ -28,18 +28,18 @@ const BuyEth: React.SFC<Props> = ({ classes }) => (
       >
         <Grid className={classes.topText} item xs={12}>
           <Typography variant="h2" gutterBottom className={classes.topHeadline}>
-            Kjøp kryptovaluta kjapt, trygt og enkelt
+            Køb cryptocurrency hurtig, sikker og nem
           </Typography>
 
           <Typography variant="h5" gutterBottom className={classes.topHeadline}>
-            Kjøpe Bitcoin og Ethereum ved hjelp av Visa, MasterCard og BankId.
+            Køb Bitcoin og Ethereum ved hjælp af Visa, MasterCard og NemID.
           </Typography>
         </Grid>
         <Grid className={classes.widget} item xs={12} md={6}>
-          <SafelloWidget crypto="eth" country="dk" lang="dk" />
+          <SafelloWidget crypto="eth" country="dk" lang="da" />
         </Grid>
         <Grid item className={classes.widget} xs={12} md={6}>
-          <SafelloWidget crypto="btc" country="dk" lang="dk" />
+          <SafelloWidget crypto="btc" country="dk" lang="da" />
         </Grid>
       </Grid>{" "}
     </div>
@@ -58,31 +58,31 @@ const BuyEth: React.SFC<Props> = ({ classes }) => (
             href="https://www.ledger.com/products/ledger-nano-x?r=3ead"
             target="_blank"
           >
-            Ledger Nano hardware lommebok
+            Ledger Nano hardware tegnebog
           </a>{" "}
-          for sikker lagring av kryptovaluta. Denne lommeboken kan lagre både
+          til sikker opbevaring af kryptovaluta. Denne tegnebog kan gemme både
           Bitcoin og Ethereum.
         </Typography>
 
         <Typography variant="h5" className={classes.alternativeHeading}>
-          Bitcoin Lommebok Alternativ
+          Bitcoin tegnebog alternativ
         </Typography>
         <Typography className={classes.alternativeBody}>
           <a href="https://bitcoin.org/en/choose-your-wallet" target="_blank">
             Her
           </a>{" "}
-          finner du en fin oversikt over Bitcoin lommebøker
+          finder du et godt overblik over Bitcoin tegnebøger
         </Typography>
         <Typography variant="h5" className={classes.alternativeHeading}>
-          Ethereum Lommebok Alternativ
+          Ethereum tegnebog alternativ
         </Typography>
         <Typography className={classes.alternativeBody}>
           <a href="https://metamask.io/" target="_blank">
             MetaMask
           </a>{" "}
-          er et godt alternative som gir deg lett tilgang til Ethereumen din.
-          MetaMask gjør det enkelt å overføre Ethereum og benytte deg av dApps
-          direkte i nettleseren din.
+          er et godt alternativ, der giver dig nem adgang til dit Ethereum.
+          MetaMask gør det også nemt at overføre Ethereum og bruge dApps direkte
+          i din browser.
         </Typography>
       </Grid>
     </Grid>
@@ -96,7 +96,7 @@ const BuyEth: React.SFC<Props> = ({ classes }) => (
     >
       <Grid className={classes.footerInner} item xs={12}>
         <Typography variant="body1" className={classes.footerText}>
-          Laget av{" "}
+          Lavet af{" "}
           <a className={classes.footerLenk} href="http://cluda.com/">
             {" "}
             Cluda AS

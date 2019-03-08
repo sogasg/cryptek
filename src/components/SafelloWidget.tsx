@@ -4,7 +4,7 @@ import Safello from "../lib/safello"
 export type Props = {
   crypto: "eth" | "btc"
   country: "no" | "se" | "dk"
-  lang: "no" | "sv" | "dk"
+  lang: "no" | "sv" | "da"
 }
 
 type State = {

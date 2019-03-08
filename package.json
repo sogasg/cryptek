@@ -37,7 +37,7 @@
     "deploy:no": "cp public/index-no.html public/index.html && npm run build && echo 'cryptek.no' > build/CNAME && gh-pages -d build -r git@github.com:sogasg/cryptek-deploy-no.git -b master",
     "deploy:se": "cp public/index-se.html public/index.html && npm run build && echo 'cryptek.se' > build/CNAME && gh-pages -d build -r git@github.com:sogasg/cryptek-deploy-se.git -b master",
     "deploy:dk": "cp public/index-dk.html public/index.html && npm run build && echo 'cryptek.dk' > build/CNAME && gh-pages -d build -r git@github.com:sogasg/cryptek-deploy-dk.git -b master",
-    "deploy": "npm run deploy-no && npm run deploy-se && npm run deploy-dk",
+    "deploy": "npm run deploy:no && npm run deploy:se && npm run deploy:dk",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

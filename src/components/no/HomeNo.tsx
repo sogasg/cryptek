@@ -81,8 +81,8 @@ const BuyEth: React.SFC<Props> = ({ classes }) => (
             MetaMask
           </a>{" "}
           er et godt alternative som gir deg lett tilgang til Ethereumen din.
-          MetaMask gjør det enkelt å overføre Ethereum og benytte deg av dApps
-          direkte i nettleseren din.
+          MetaMask gjør det også enkelt å overføre Ethereum og benytte deg av
+          dApps direkte i nettleseren din.
         </Typography>
       </Grid>
     </Grid>
