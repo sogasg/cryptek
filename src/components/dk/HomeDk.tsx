@@ -32,7 +32,7 @@ const BuyEth: React.SFC<Props> = ({ classes }) => (
           </Typography>
 
           <Typography variant="h5" gutterBottom className={classes.topHeadline}>
-            Køb Bitcoin og Ethereum ved hjælp af Visa, MasterCard og NemID.
+            Køb Bitcoin og Ethereum med Visa, MasterCard og NemID
           </Typography>
         </Grid>
         <Grid className={classes.widget} item xs={12} md={6}>
