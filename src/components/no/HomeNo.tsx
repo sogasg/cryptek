@@ -14,11 +14,9 @@ import {
 } from "@material-ui/core"
 import SafelloWidget from "../SafelloWidget"
 
-interface Props extends WithStyles<typeof styles> {
-  country: "no" | "dk" | "se"
-}
+interface Props extends WithStyles<typeof styles> {}
 
-const BuyEth: React.SFC<Props> = ({ classes, country }) => (
+const BuyEth: React.SFC<Props> = ({ classes }) => (
   <div>
     <div className={classes.topSection}>
       <Grid
@@ -38,10 +36,10 @@ const BuyEth: React.SFC<Props> = ({ classes, country }) => (
           </Typography>
         </Grid>
         <Grid className={classes.widget} item xs={12} md={6}>
-          <SafelloWidget crypto="eth" country={country} lang={country} />
+          <SafelloWidget crypto="eth" country="no" lang="no" />
         </Grid>
         <Grid item className={classes.widget} xs={12} md={6}>
-          <SafelloWidget crypto="btc" country={country} lang={country} />
+          <SafelloWidget crypto="btc" country="no" lang="no" />
         </Grid>
       </Grid>{" "}
     </div>
@@ -103,7 +101,7 @@ const BuyEth: React.SFC<Props> = ({ classes, country }) => (
             {" "}
             Cluda AS
           </a>{" "}
-          - {country.toUpperCase()}
+          - NO
         </Typography>
       </Grid>
     </Grid>
@@ -194,10 +192,7 @@ const componentWithStyles = withStyles(styles)(BuyEth)
 
 // STATE
 const mapStateToProps = (state: any) => {
-  const country: "no" | "dk" | "se" = "no"
-  return {
-    country,
-  }
+  return {}
 }
 
 const mapDispatchToProps = (dispatch: any) => {

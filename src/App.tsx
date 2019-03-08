@@ -37,7 +37,7 @@ function getCountry() {
 function getComponents() {
   const country = getCountry()
   let components = {
-    Home: HomeNo,
+    Home: HomeNo, //FIXME
     BuyBtc: BuyBtcNo,
     BuyEth: BuyEthNo,
   }

@@ -4,7 +4,7 @@ import Safello from "../lib/safello"
 export type Props = {
   crypto: "eth" | "btc"
   country: "no" | "se" | "dk"
-  lang: "no" | "se" | "dk"
+  lang: "no" | "sv" | "dk"
 }
 
 type State = {
@@ -12,12 +12,10 @@ type State = {
 }
 
 class SafelloWidget extends React.Component<Props, State> {
-  
-
   constructor(props: Props) {
     super(props)
     this.state = {
-      className: makeRandomId()
+      className: makeRandomId(),
     }
   }
 
@@ -46,11 +44,11 @@ class SafelloWidget extends React.Component<Props, State> {
 export default SafelloWidget
 
 function makeRandomId() {
-  var text = "";
-  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  var text = ""
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 
   for (var i = 0; i < 5; i++)
-    text += possible.charAt(Math.floor(Math.random() * possible.length));
+    text += possible.charAt(Math.floor(Math.random() * possible.length))
 
-  return text.toString();
+  return text.toString()
 }
