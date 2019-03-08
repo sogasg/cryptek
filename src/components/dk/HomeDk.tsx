@@ -12,7 +12,7 @@ import {
   CardContent,
   Grid,
 } from "@material-ui/core"
-import SafelloWidget from "./SafelloWidget"
+import SafelloWidget from "../SafelloWidget"
 
 interface Props extends WithStyles<typeof styles> {
   country: "no" | "dk" | "se"
@@ -36,7 +36,8 @@ const BuyEth: React.SFC<Props> = ({ classes, country }) => (
     </Grid>
 
     <Typography variant="body1">
-      Laget av <a href="http://cluda.com/"> Cluda AS</a> - {country.toUpperCase()}
+      Laget av <a href="http://cluda.com/"> Cluda AS</a> -{" "}
+      {country.toUpperCase()}
     </Typography>
   </div>
 )
@@ -77,8 +78,8 @@ const componentWithStyles = withStyles(styles)(BuyEth)
 
 // STATE
 const mapStateToProps = (state: any) => {
-    const country = window.location.hostname.split(".").reverse()[0]
-    console.log("country: " + country)
+  const country = window.location.hostname.split(".").reverse()[0]
+  console.log("country: " + country)
   return {
     country: country === "localhost" ? "no" : (country as any),
   }

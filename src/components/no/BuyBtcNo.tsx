@@ -11,19 +11,19 @@ import {
   Button,
   CardContent,
 } from "@material-ui/core"
-import SafelloWidget from "./SafelloWidget"
+import SafelloWidget from "../SafelloWidget"
 
 interface Props extends WithStyles<typeof styles> {}
 
-const BuyEth: React.SFC<Props> = ({ classes }) => (
+const BuyBtc: React.SFC<Props> = ({ classes }) => (
   <div className={classes.root}>
     <Typography variant="h1" className={classes.header}>
-      Kjøp Ethereum
+      Kjøp Bitcoin
     </Typography>
     <Typography className={classes.bodyText} variant="body1">
-      Her kan du kjøpe Ethereum ved hjelp av Visa/MasterCard og BankID
+      Her kan du kjøpe Bitcoin ved hjelp av Visa/MasterCard og BankID
     </Typography>
-    <SafelloWidget crypto="eth" country="no" lang="no" />
+    <SafelloWidget crypto="btc" country="no" lang="no" />
   </div>
 )
 
@@ -48,7 +48,7 @@ const styles = ({  }: Theme) =>
     },
   })
 
-const componentWithStyles = withStyles(styles)(BuyEth)
+const componentWithStyles = withStyles(styles)(BuyBtc)
 
 // STATE
 const mapStateToProps = (state: any) => {

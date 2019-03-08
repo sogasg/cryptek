@@ -3,9 +3,19 @@ import { SFC } from "react"
 import { Route, Switch } from "react-router"
 
 import Layout from "./components/Layout"
-import BuyBtc from "./components/BuyBtc"
-import BuyEth from "./components/BuyEth"
-import Home from "./components/Home"
+import BuyBtcNo from "./components/no/BuyBtcNo"
+import BuyEthNo from "./components/no/BuyEthNo"
+import HomeNo from "./components/no/HomeNo"
+
+import BuyBtcSe from "./components/se/BuyBtcSe"
+import BuyEthSe from "./components/se/BuyEthSe"
+import HomeSe from "./components/se/HomeSe"
+
+import BuyBtcDk from "./components/dk/BuyBtcDk"
+import BuyEthDk from "./components/dk/BuyEthDk"
+import HomeDk from "./components/dk/HomeDk"
+
+const { Home, BuyBtc, BuyEth } = getComponents()
 
 const App: SFC = () => (
   <Layout>
@@ -18,3 +28,32 @@ const App: SFC = () => (
 )
 
 export default App
+
+function getCountry() {
+  const country = window.location.hostname.split(".").reverse()[0]
+  return country === "localhost" ? "no" : (country as any)
+}
+
+function getComponents() {
+  const country = getCountry()
+  let components = {
+    Home: HomeNo,
+    BuyBtc: BuyBtcNo,
+    BuyEth: BuyEthNo,
+  }
+  if (country === "dk") {
+    components = {
+      Home: HomeDk,
+      BuyBtc: BuyBtcDk,
+      BuyEth: BuyEthDk,
+    }
+  } else if (country === "se") {
+    components = {
+      Home: HomeSe,
+      BuyBtc: BuyBtcSe,
+      BuyEth: BuyEthSe,
+    }
+  }
+
+  return components
+}

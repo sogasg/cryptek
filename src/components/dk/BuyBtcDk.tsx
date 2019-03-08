@@ -11,7 +11,7 @@ import {
   Button,
   CardContent,
 } from "@material-ui/core"
-import SafelloWidget from "./SafelloWidget"
+import SafelloWidget from "../SafelloWidget"
 
 interface Props extends WithStyles<typeof styles> {}
 
@@ -32,13 +32,13 @@ const styles = ({  }: Theme) =>
   createStyles({
     root: {
       margin: "auto",
-        marginTop: 30,
-        textAlign: "center"
+      marginTop: 30,
+      textAlign: "center",
     },
     bodyText: {
-        fontSize: 18,
-        marginTop: 25,
-        marginBottom: 10,
+      fontSize: 18,
+      marginTop: 25,
+      marginBottom: 10,
     },
     header: {
       margin: 10,
